@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "CMS_framework_frontend": {
+      "type": "enumeration",
+      "enum": [
+        "nuxt",
+        "js",
+        "joomla"
+      ]
+    },
+    "db": {
+      "type": "enumeration",
+      "enum": [
+        "mongodb",
+        "sql"
+      ]
+    },
+    "CMS_framework_backend": {
+      "type": "enumeration",
+      "enum": [
+        "joomla",
+        "wordpress",
+        "strapi",
+        "nodejs_express"
+      ]
+    },
+    "site_url": {
+      "type": "string"
+    }
+  }
+}
